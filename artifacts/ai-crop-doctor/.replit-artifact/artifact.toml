@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "AI Crop Doctor"
+description = "A multilingual, voice-first crop health assistant for farmers to submit crop photos and symptoms, review diagnoses and guidance, and manage scan history on mobile."
+version = "1.0.0"
+id = "artifacts/ai-crop-doctor"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22135
+
+[services.development]
+run = "pnpm --filter @workspace/ai-crop-doctor run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ai-crop-doctor", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ai-crop-doctor/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22135"
+BASE_PATH = "/"

@@ -1,0 +1,1 @@
+- [AI Crop Doctor requirements](crop-doctor-requirements.md) — Preserve the 12-language, device-local, honest-demo constraints when extending this farmer-facing app.
