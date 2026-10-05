@@ -22,4 +22,4 @@ timeoutMs = 20000
 [userenv]
 
 [userenv.development]
-VITE_VOICE_API_URL = "https://custom-composition-wines-considerations.trycloudflare.com"
+VITE_VOICE_API_URL = "https://ai-crop-doctor-voice-72021165946.asia-south1.run.app"
