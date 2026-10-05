@@ -76,7 +76,7 @@ export function DetectPage() {
  const previewData=(f:File)=>new Promise<string>(resolve=>{const image=new Image();const url=URL.createObjectURL(f);image.onload=()=>{const scale=Math.min(1,900/Math.max(image.width,image.height));const canvas=document.createElement('canvas');canvas.width=Math.round(image.width*scale);canvas.height=Math.round(image.height*scale);const context=canvas.getContext('2d');if(!context){URL.revokeObjectURL(url);resolve('');return;}context.drawImage(image,0,0,canvas.width,canvas.height);URL.revokeObjectURL(url);resolve(canvas.toDataURL('image/jpeg',.78));};image.onerror=()=>{URL.revokeObjectURL(url);resolve('');};image.src=url;});
  const submit=async()=>{if(!file){setError(t('photoRequired'));return;}setLoading(true);setError('');try{const dataUrl=await previewData(file);const result=await predictCrop(file,crop||'rice',symptoms,language,dataUrl||undefined);saveDiagnosis(result);navigate('/result');}catch{setError(t('error'));}finally{setLoading(false);}};
  const toggleRecord=async()=>{if(recording){recorder.current?.stop();setRecording(false);return;}
-  if(!import.meta.env.VITE_VOICE_API_URL){setError(t('micUnavailable'));return;}
+   if(!import.meta.env.VITE_TRANSCRIBE_API_URL){setError(t('micUnavailable'));return;}
   try {if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){setError(t('micUnavailable'));return;}const stream=await navigator.mediaDevices.getUserMedia({audio:true});const rec=new MediaRecorder(stream);recorder.current=rec;chunks.current=[];rec.ondataavailable=e=>chunks.current.push(e.data);rec.onstop=async()=>{stream.getTracks().forEach(track=>track.stop());const text=await transcribeAudio(new Blob(chunks.current,{type:rec.mimeType}),language);if(text)setSymptoms(old=>`${old}${old?' ':''}${text}`);else setError(t('micUnavailable'));};rec.start();setRecording(true);}catch{setError(t('micUnavailable'));}
  };
  return <div className="page-enter">
@@ -111,7 +111,19 @@ export function ResultPage() {
  const t=useT();const {history,language,conversation,addMessage}=useAppState();const diagnosis=history[0];const [message,setMessage]=useState('');const [sending,setSending]=useState(false);const [voiceNotice,setVoiceNotice]=useState('');const [audioBusy,setAudioBusy]=useState(false);
  const chatBox=useRef<HTMLDivElement>(null);
   const send=async()=>{if(!message.trim()||!diagnosis)return;const text=message.trim();addMessage(newUserMessage(text));setMessage('');setSending(true);const reply=await askCropDoctor(text,diagnosis,language,conversation);addMessage(reply);setSending(false);setTimeout(()=>chatBox.current?.scrollTo({top:chatBox.current.scrollHeight,behavior:'smooth'}),60);};
- const listen=async()=>{if(!diagnosis)return;setAudioBusy(true);setVoiceNotice('');const audio=await getAdviceAudio(`${t(diagnosis.disease)}. ${diagnosis.treatment.map(x=>t(x)).join('. ')}`,language);if(!audio){setVoiceNotice(t('voiceUnavailable'));setAudioBusy(false);return;}const player=new Audio(audio);player.onended=()=>{URL.revokeObjectURL(audio);setAudioBusy(false);};player.onerror=()=>{setVoiceNotice(t('voiceUnavailable'));setAudioBusy(false);};await player.play().catch(()=>{setVoiceNotice(t('voiceUnavailable'));setAudioBusy(false);});};
+  const listen=async()=>{
+   if(!diagnosis)return;
+   setAudioBusy(true);setVoiceNotice('');
+   const audioBlob=await getAdviceAudio(`${t(diagnosis.disease)}. ${diagnosis.treatment.map(x=>t(x)).join('. ')}`,language);
+   if(!audioBlob){setVoiceNotice(t('voiceUnavailable'));setAudioBusy(false);return;}
+   const audioUrl=URL.createObjectURL(audioBlob);
+   const player=new Audio(audioUrl);
+   let released=false;
+   const release=()=>{if(released)return;released=true;URL.revokeObjectURL(audioUrl);setAudioBusy(false);};
+   player.onended=release;
+   player.onerror=()=>{setVoiceNotice(t('voiceUnavailable'));release();};
+   await player.play().catch(()=>{setVoiceNotice(t('voiceUnavailable'));release();});
+  };
  if(!diagnosis)return <div><PageHeading title={t('resultEmpty')} sub={t('resultEmptySub')}/><div className="glass rounded-[25px] p-9 text-center"><div className="w-14 h-14 rounded-2xl bg-[#e4ecd9] text-[#55734e] grid place-items-center mx-auto mb-4"><Leaf size={26}/></div><p className="text-[#718071]">{t('resultEmptySub')}</p><Link href="/detect" data-testid="button-first-check" className="inline-flex items-center gap-2 mt-5 rounded-xl bg-[#284e35] px-4 py-3 text-white no-underline text-sm font-bold"><Leaf size={17}/>{t('scanNow')}</Link></div></div>;
  return <div className="page-enter">
   <PageHeading eyebrow={t('result')} title={t('diagnosis')} sub={t('resultEmptySub')}/>

@@ -18,3 +18,8 @@ expertMode = true
 [postMerge]
 path = "scripts/post-merge.sh"
 timeoutMs = 20000
+
+[userenv]
+
+[userenv.development]
+VITE_VOICE_API_URL = "http://localhost:8000"

@@ -8,6 +8,7 @@ description: User-stated language, persistence, and honesty requirements for the
 - Never present example output as a real crop diagnosis. Label examples clearly and show an explicit unavailable state when the prediction service is missing.
 - Do not display untranslated English model output as if it were localized guidance; if a safe translation is unavailable, show a localized warning and withhold the diagnosis and treatment details.
 - Use browser speech recognition where available for voice input. Do not use browser SpeechSynthesis/Web Speech for TTS; use the configured voice service or show a localized unavailable message.
+- Voice output uses `POST /speak` with `{ text, language }` and expects `audio/mpeg`; Google Cloud credentials stay on the backend, never in frontend code.
 
 **Why:** The target audience is Indian farmers, and incorrect or inaccessible crop-treatment guidance can lead to real-world harm.
 

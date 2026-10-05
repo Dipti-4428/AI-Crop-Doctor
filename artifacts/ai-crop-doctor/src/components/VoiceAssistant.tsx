@@ -47,14 +47,18 @@ export default function VoiceAssistant() {
   const speak = async (text: string, id: string) => {
     setSpeakingId(id);
     setNotice('');
-    const audioUrl = await getAdviceAudio(text, language);
-    if (!audioUrl) {
+    const audioBlob = await getAdviceAudio(text, language);
+    if (!audioBlob) {
       setNotice(t('voiceUnavailable'));
       setSpeakingId('');
       return;
     }
+    const audioUrl = URL.createObjectURL(audioBlob);
     const player = new Audio(audioUrl);
+    let released = false;
     const release = () => {
+      if (released) return;
+      released = true;
       URL.revokeObjectURL(audioUrl);
       setSpeakingId('');
     };
@@ -115,7 +119,7 @@ export default function VoiceAssistant() {
       return;
     }
 
-    if (!import.meta.env.VITE_VOICE_API_URL || !navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) {
+    if (!import.meta.env.VITE_TRANSCRIBE_API_URL || !navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) {
       setNotice(t('micUnavailable'));
       return;
     }

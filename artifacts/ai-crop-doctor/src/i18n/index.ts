@@ -68,6 +68,7 @@ const localized: Record<Language,Record<string,string>> = {
 const safetyTranslations: Record<Language, Record<string, string>> = {
   en: {
     invalidPhotoFormat: 'Choose a JPG, PNG, or WEBP photo.',
+    voiceUnavailable: 'Audio advice could not be generated or played. Check the voice service and try again.',
     lowConfidence: 'I’m not confident about this result. Please upload a clearer photo and check nearby plants.',
     translationUnavailable: 'I can’t safely translate this result right now, so I’m not showing it as a diagnosis. Please ask a local agriculture officer or switch to English.',
     tomatoEarlyBlight: 'Tomato early blight',
@@ -78,6 +79,7 @@ const safetyTranslations: Record<Language, Record<string, string>> = {
   },
   hi: {
     invalidPhotoFormat: 'कृपया JPG, PNG या WEBP तस्वीर चुनें।',
+    voiceUnavailable: 'आवाज़ में सलाह तैयार या चलाई नहीं जा सकी। आवाज़ सेवा जाँचें और फिर कोशिश करें।',
     lowConfidence: 'मुझे इस नतीजे पर पूरा भरोसा नहीं है। कृपया साफ़ तस्वीर लें और आसपास के पौधों को भी देखें।',
     translationUnavailable: 'मैं अभी इस नतीजे का सुरक्षित अनुवाद नहीं कर पा रहा हूँ, इसलिए इसे निदान के रूप में नहीं दिखा रहा। कृपया स्थानीय कृषि अधिकारी से पूछें या अंग्रेज़ी चुनें।',
     tomatoEarlyBlight: 'टमाटर का अर्ली ब्लाइट',
@@ -88,6 +90,7 @@ const safetyTranslations: Record<Language, Record<string, string>> = {
   },
   mr: {
     invalidPhotoFormat: 'कृपया JPG, PNG किंवा WEBP फोटो निवडा.',
+    voiceUnavailable: 'ऑडिओ सल्ला तयार किंवा प्ले करता आला नाही. आवाज सेवा तपासून पुन्हा प्रयत्न करा.',
     lowConfidence: 'या निकालाबद्दल मला खात्री नाही. कृपया अधिक स्पष्ट फोटो अपलोड करा आणि जवळची झाडे तपासा.',
     translationUnavailable: 'या निकालाचा सुरक्षित अनुवाद सध्या उपलब्ध नाही, त्यामुळे तो निदान म्हणून दाखवत नाही. स्थानिक कृषी अधिकाऱ्यांचा सल्ला घ्या किंवा इंग्रजी निवडा.',
     tomatoEarlyBlight: 'टोमॅटो अर्ली ब्लाइट',
@@ -98,6 +101,7 @@ const safetyTranslations: Record<Language, Record<string, string>> = {
   },
   bn: {
     invalidPhotoFormat: 'অনুগ্রহ করে JPG, PNG বা WEBP ছবি বেছে নিন।',
+    voiceUnavailable: 'অডিও পরামর্শ তৈরি বা চালানো যায়নি। ভয়েস পরিষেবা পরীক্ষা করে আবার চেষ্টা করুন।',
     lowConfidence: 'এই ফলাফল সম্পর্কে আমি নিশ্চিত নই। অনুগ্রহ করে আরও পরিষ্কার ছবি দিন এবং পাশের গাছগুলিও দেখুন।',
     translationUnavailable: 'এই ফলাফলের নিরাপদ অনুবাদ এখন পাওয়া যাচ্ছে না, তাই এটিকে রোগ নির্ণয় হিসেবে দেখাচ্ছি না। স্থানীয় কৃষি আধিকারিকের পরামর্শ নিন অথবা ইংরেজি বেছে নিন।',
     tomatoEarlyBlight: 'টমেটোর আর্লি ব্লাইট',
@@ -108,6 +112,7 @@ const safetyTranslations: Record<Language, Record<string, string>> = {
   },
   gu: {
     invalidPhotoFormat: 'કૃપા કરીને JPG, PNG અથવા WEBP ફોટો પસંદ કરો.',
+    voiceUnavailable: 'ઓડિયો સલાહ બનાવી કે ચલાવી શકાઈ નથી. વોઇસ સેવા તપાસીને ફરી પ્રયાસ કરો.',
     lowConfidence: 'મને આ પરિણામની ખાતરી નથી. કૃપા કરીને વધુ સ્પષ્ટ ફોટો મોકલો અને નજીકના છોડ પણ તપાસો.',
     translationUnavailable: 'આ પરિણામનો સુરક્ષિત અનુવાદ અત્યારે ઉપલબ્ધ નથી, તેથી તેને નિદાન તરીકે બતાવતો નથી. સ્થાનિક કૃષિ અધિકારીની સલાહ લો અથવા અંગ્રેજી પસંદ કરો.',
     tomatoEarlyBlight: 'ટામેટાનો અર્લી બ્લાઇટ',
@@ -118,6 +123,7 @@ const safetyTranslations: Record<Language, Record<string, string>> = {
   },
   ta: {
     invalidPhotoFormat: 'JPG, PNG அல்லது WEBP புகைப்படத்தைத் தேர்ந்தெடுக்கவும்.',
+    voiceUnavailable: 'ஒலியுரையை உருவாக்கவோ இயக்கவோ முடியவில்லை. குரல் சேவையைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்.',
     lowConfidence: 'இந்த முடிவில் எனக்கு உறுதி இல்லை. தெளிவான புகைப்படத்தைப் பதிவேற்றி அருகிலுள்ள செடிகளையும் பாருங்கள்.',
     translationUnavailable: 'இந்த முடிவை இப்போது பாதுகாப்பாக மொழிபெயர்க்க முடியவில்லை; அதனால் நோயறிதலாகக் காட்டவில்லை. உள்ளூர் வேளாண் அலுவலரிடம் கேளுங்கள் அல்லது ஆங்கிலத்தைத் தேர்ந்தெடுக்கவும்.',
     tomatoEarlyBlight: 'தக்காளி ஆரம்ப இலைக்கருகல் நோய்',
@@ -128,6 +134,7 @@ const safetyTranslations: Record<Language, Record<string, string>> = {
   },
   te: {
     invalidPhotoFormat: 'JPG, PNG లేదా WEBP ఫోటోను ఎంచుకోండి.',
+    voiceUnavailable: 'ఆడియో సలహాను రూపొందించడం లేదా ప్లే చేయడం సాధ్యపడలేదు. వాయిస్ సేవను తనిఖీ చేసి మళ్లీ ప్రయత్నించండి.',
     lowConfidence: 'ఈ ఫలితంపై నాకు పూర్తి నమ్మకం లేదు. మరింత స్పష్టమైన ఫోటో పంపి పక్కనున్న మొక్కలను కూడా చూడండి.',
     translationUnavailable: 'ఈ ఫలితాన్ని ప్రస్తుతం సురక్షితంగా అనువదించలేకపోతున్నాను, అందుకే నిర్ధారణగా చూపడం లేదు. స్థానిక వ్యవసాయ అధికారిని అడగండి లేదా ఆంగ్లాన్ని ఎంచుకోండి.',
     tomatoEarlyBlight: 'టమాటా ఎర్లీ బ్లైట్',
@@ -138,6 +145,7 @@ const safetyTranslations: Record<Language, Record<string, string>> = {
   },
   kn: {
     invalidPhotoFormat: 'JPG, PNG ಅಥವಾ WEBP ಫೋಟೋವನ್ನು ಆಯ್ಕೆಮಾಡಿ.',
+    voiceUnavailable: 'ಆಡಿಯೊ ಸಲಹೆಯನ್ನು ರಚಿಸಲು ಅಥವಾ ಪ್ಲೇ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಧ್ವನಿ ಸೇವೆಯನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.',
     lowConfidence: 'ಈ ಫಲಿತಾಂಶದ ಬಗ್ಗೆ ನನಗೆ ಖಚಿತತೆ ಇಲ್ಲ. ಹೆಚ್ಚು ಸ್ಪಷ್ಟವಾದ ಚಿತ್ರವನ್ನು ನೀಡಿ, ಪಕ್ಕದ ಗಿಡಗಳನ್ನೂ ಪರಿಶೀಲಿಸಿ.',
     translationUnavailable: 'ಈ ಫಲಿತಾಂಶವನ್ನು ಈಗ ಸುರಕ್ಷಿತವಾಗಿ ಅನುವಾದಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ; ಆದ್ದರಿಂದ ರೋಗನಿರ್ಣಯವಾಗಿ ತೋರಿಸುತ್ತಿಲ್ಲ. ಸ್ಥಳೀಯ ಕೃಷಿ ಅಧಿಕಾರಿಯನ್ನು ಕೇಳಿ ಅಥವಾ ಇಂಗ್ಲಿಷ್ ಆಯ್ಕೆಮಾಡಿ.',
     tomatoEarlyBlight: 'ಟೊಮೆಟೊ ಅರ್ಲಿ ಬ್ಲೈಟ್',
@@ -148,6 +156,7 @@ const safetyTranslations: Record<Language, Record<string, string>> = {
   },
   ml: {
     invalidPhotoFormat: 'JPG, PNG അല്ലെങ്കിൽ WEBP ചിത്രം തിരഞ്ഞെടുക്കുക.',
+    voiceUnavailable: 'ഓഡിയോ ഉപദേശം തയ്യാറാക്കാനോ പ്ലേ ചെയ്യാനോ കഴിഞ്ഞില്ല. ശബ്ദ സേവനം പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.',
     lowConfidence: 'ഈ ഫലത്തിൽ എനിക്ക് ഉറപ്പില്ല. കൂടുതൽ വ്യക്തമായ ചിത്രം നൽകി സമീപത്തെ ചെടികളും പരിശോധിക്കുക.',
     translationUnavailable: 'ഈ ഫലം ഇപ്പോൾ സുരക്ഷിതമായി വിവർത്തനം ചെയ്യാൻ കഴിയാത്തതിനാൽ രോഗനിർണയമായി കാണിക്കുന്നില്ല. പ്രാദേശിക കൃഷി ഉദ്യോഗസ്ഥനോട് ചോദിക്കുകയോ ഇംഗ്ലീഷ് തിരഞ്ഞെടുക്കുകയോ ചെയ്യുക.',
     tomatoEarlyBlight: 'തക്കാളിയിലെ ആദ്യകാല ഇലപ്പുള്ളി രോഗം',
@@ -158,6 +167,7 @@ const safetyTranslations: Record<Language, Record<string, string>> = {
   },
   pa: {
     invalidPhotoFormat: 'ਕਿਰਪਾ ਕਰਕੇ JPG, PNG ਜਾਂ WEBP ਤਸਵੀਰ ਚੁਣੋ।',
+    voiceUnavailable: 'ਆਡੀਓ ਸਲਾਹ ਬਣਾਈ ਜਾਂ ਚਲਾਈ ਨਹੀਂ ਜਾ ਸਕੀ। ਵੌਇਸ ਸੇਵਾ ਜਾਂਚੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।',
     lowConfidence: 'ਮੈਨੂੰ ਇਸ ਨਤੀਜੇ ਬਾਰੇ ਪੂਰਾ ਭਰੋਸਾ ਨਹੀਂ। ਕਿਰਪਾ ਕਰਕੇ ਹੋਰ ਸਾਫ਼ ਤਸਵੀਰ ਦਿਓ ਅਤੇ ਨੇੜਲੇ ਬੂਟਿਆਂ ਨੂੰ ਵੀ ਵੇਖੋ।',
     translationUnavailable: 'ਇਸ ਨਤੀਜੇ ਦਾ ਸੁਰੱਖਿਅਤ ਅਨੁਵਾਦ ਇਸ ਵੇਲੇ ਉਪਲਬਧ ਨਹੀਂ, ਇਸ ਲਈ ਇਸਨੂੰ ਨਿਦਾਨ ਵਜੋਂ ਨਹੀਂ ਦਿਖਾਇਆ ਜਾ ਰਿਹਾ। ਸਥਾਨਕ ਖੇਤੀ ਅਧਿਕਾਰੀ ਨੂੰ ਪੁੱਛੋ ਜਾਂ ਅੰਗਰੇਜ਼ੀ ਚੁਣੋ।',
     tomatoEarlyBlight: 'ਟਮਾਟਰ ਦਾ ਅਰਲੀ ਬਲਾਈਟ',
@@ -168,6 +178,7 @@ const safetyTranslations: Record<Language, Record<string, string>> = {
   },
   or: {
     invalidPhotoFormat: 'ଦୟାକରି JPG, PNG କିମ୍ବା WEBP ଫଟୋ ବାଛନ୍ତୁ।',
+    voiceUnavailable: 'ଅଡିଓ ପରାମର୍ଶ ପ୍ରସ୍ତୁତ କିମ୍ବା ଚଲାଇ ହେଲା ନାହିଁ। ଭଏସ୍ ସେବା ଯାଞ୍ଚ କରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।',
     lowConfidence: 'ଏହି ଫଳାଫଳ ବିଷୟରେ ମୁଁ ନିଶ୍ଚିତ ନୁହେଁ। ଦୟାକରି ଅଧିକ ସ୍ପଷ୍ଟ ଫଟୋ ଦିଅନ୍ତୁ ଏବଂ ପାଖର ଗଛଗୁଡ଼ିକୁ ମଧ୍ୟ ଦେଖନ୍ତୁ।',
     translationUnavailable: 'ଏହି ଫଳାଫଳର ସୁରକ୍ଷିତ ଅନୁବାଦ ବର୍ତ୍ତମାନ ଉପଲବ୍ଧ ନାହିଁ, ତେଣୁ ଏହାକୁ ରୋଗ ନିର୍ଣ୍ଣୟ ଭାବେ ଦେଖାଉନାହିଁ। ସ୍ଥାନୀୟ କୃଷି ଅଧିକାରୀଙ୍କୁ ପଚାରନ୍ତୁ କିମ୍ବା ଇଂରାଜୀ ବାଛନ୍ତୁ।',
     tomatoEarlyBlight: 'ଟମାଟୋର ଆରମ୍ଭିକ ବ୍ଲାଇଟ୍',
@@ -178,6 +189,7 @@ const safetyTranslations: Record<Language, Record<string, string>> = {
   },
   as: {
     invalidPhotoFormat: 'অনুগ্ৰহ কৰি JPG, PNG বা WEBP ছবি বাছক।',
+    voiceUnavailable: 'অডিঅ’ পৰামৰ্শ তৈয়াৰ বা চলাব পৰা নগ’ল। ভইচ সেৱা পৰীক্ষা কৰি পুনৰ চেষ্টা কৰক।',
     lowConfidence: 'এই ফলাফলটো নিশ্চিত নহয়। অনুগ্ৰহ কৰি অধিক স্পষ্ট ছবি দিয়ক আৰু কাষৰ গছবোৰো চাওক।',
     translationUnavailable: 'এই ফলাফলৰ নিৰাপদ অনুবাদ এতিয়া উপলব্ধ নহয়, সেয়ে ইয়াক ৰোগ নিৰ্ণয় হিচাপে দেখুওৱা হোৱা নাই। স্থানীয় কৃষি বিষয়াক সোধক অথবা ইংৰাজী বাছক।',
     tomatoEarlyBlight: 'বিলাহীৰ আগতীয়া ব্লাইট',
@@ -195,7 +207,7 @@ export const initialLanguage = (): Language => {
   const saved = typeof localStorage !== 'undefined' ? localStorage.getItem('khet-language') as Language | null : null;
   return saved && supported.includes(saved) ? saved : browserLanguage();
 };
-export const translate = (language: Language, key: string): string => localized[language]?.[key] ?? safetyTranslations[language]?.[key] ?? english[key] ?? (/^[A-Za-z][A-Za-z0-9_.-]*$/.test(key) ? '' : key);
+export const translate = (language: Language, key: string): string => safetyTranslations[language]?.[key] ?? localized[language]?.[key] ?? english[key] ?? (/^[A-Za-z][A-Za-z0-9_.-]*$/.test(key) ? '' : key);
 export type TFunction = (key: string) => string;
 export const TranslationContext = createContext<TFunction>((key) => translate('en', key));
 export const useT = () => useContext(TranslationContext);
